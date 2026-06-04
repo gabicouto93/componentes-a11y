@@ -1,0 +1,92 @@
+name: "Relatar bug do site"
+description: "Reporte falhas funcionais, visuais ou de performance no site."
+title: "[Bug] "
+labels:
+  - bug
+  - triage
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar.
+        Descreva o bug com clareza para facilitar a reproducao.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descricao do bug
+      description: O que aconteceu?
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Acesse ...
+        2. Clique em ...
+        3. Veja o erro ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: atual
+    attributes:
+      label: Comportamento atual
+      description: O que acontece hoje?
+    validations:
+      required: true
+
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      placeholder: "Ex.: Firefox 127, macOS 14, mobile"
+    validations:
+      required: true
+
+  - type: input
+    id: pagina
+    attributes:
+      label: URL ou pagina afetada
+      placeholder: "Ex.: /pages/contato.html"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e evidencias
+      description: Cole erros de console, stacktrace e links de imagem/video.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impacto
+    attributes:
+      label: Impacto
+      options:
+        - Bloqueante
+        - Alto
+        - Medio
+        - Baixo
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: termos
+    attributes:
+      label: Confirmacoes
+      options:
+        - label: Verifiquei se nao existe bug duplicado aberto.
+          required: true

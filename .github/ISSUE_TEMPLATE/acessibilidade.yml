@@ -1,0 +1,108 @@
+name: "Relatar problema de acessibilidade"
+description: "Reporte barreiras de acessibilidade encontradas no site ou nos componentes."
+title: "[A11Y] "
+labels:
+  - accessibility
+  - triage
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir com a acessibilidade do projeto.
+        Preencha os campos abaixo com o maximo de detalhes.
+
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      description: Qual o impacto para a pessoa usuaria?
+      options:
+        - Critica (impede uso)
+        - Alta (dificulta uso)
+        - Media (causa confusao)
+        - Baixa (ajuste recomendado)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: wcag
+    attributes:
+      label: Criterio WCAG relacionado (se souber)
+      description: Selecione o criterio mais proximo.
+      options:
+        - "1.1.1 Conteudo nao textual"
+        - "1.3.1 Informacoes e relacionamentos"
+        - "1.4.3 Contraste minimo"
+        - "2.1.1 Teclado"
+        - "2.4.7 Foco visivel"
+        - "3.3.1 Identificacao de erro"
+        - "Outro / Nao sei"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descricao do problema
+      description: Explique o que acontece e por que isso e uma barreira.
+      placeholder: "Ex.: O botao de envio nao recebe foco visivel no teclado."
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Informe um passo a passo claro.
+      placeholder: |
+        1. Acesse ...
+        2. Pressione Tab ate ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: Evidencias e contexto tecnico
+      description: Inclua logs, prints, video, HTML/CSS/JS e ferramentas usadas.
+      placeholder: "Navegador, leitor de tela, versao, device, etc."
+    validations:
+      required: false
+
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Navegador, sistema operacional e dispositivo.
+      placeholder: "Ex.: Chrome 126, Windows 11, desktop"
+    validations:
+      required: true
+
+  - type: input
+    id: tecnologia-assistiva
+    attributes:
+      label: Tecnologia assistiva (se aplicavel)
+      description: Leitor de tela, ampliador, comando de voz etc.
+      placeholder: "Ex.: NVDA 2025.1"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: termos
+    attributes:
+      label: Confirmacoes
+      options:
+        - label: Li e preenchi os campos com informacoes suficientes para reproducao.
+          required: true
+        - label: Verifiquei se nao existe issue duplicada aberta.
+          required: true
