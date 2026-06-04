@@ -62,9 +62,6 @@ body {
 
 .atalhos,
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -72,6 +69,20 @@ nav ul {
 
 .atalhos {
     margin-bottom: 1rem;
+}
+
+.atalhos li {
+    margin: 0 0 0.5rem;
+}
+
+.atalhos li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
 }
 
 a {
@@ -283,9 +294,17 @@ button:hover,
 }
 
 @media (max-width: 640px) {
-    .atalhos,
+    .atalhos li,
+    nav ul {
+        margin-bottom: 0.5rem;
+    }
+
     nav ul {
         flex-direction: column;
+    }
+
+    .atalhos li:last-child {
+        margin-bottom: 0;
     }
 
     .card {
