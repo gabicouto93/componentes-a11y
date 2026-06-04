@@ -1,0 +1,294 @@
+/* Centro de comunicação com contraste e foco visível alinhados ao WCAG 2.2 AA */
+
+:root {
+    --bg: #f3f7f2;
+    --bg-panel: #ffffff;
+    --text: #102014;
+    --muted: #2c4a35;
+    --primary: #005f46;
+    --primary-hover: #004b37;
+    --secondary: #0f3d7a;
+    --secondary-hover: #0a2f5e;
+    --border: #7aa38a;
+    --error: #8b1e1e;
+    --focus: #0b5cad;
+    --shadow: 0 8px 24px rgba(16, 32, 20, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(0, 95, 70, 0.15), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(15, 61, 122, 0.14), transparent 36%),
+        var(--bg);
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    z-index: 100;
+}
+
+.skip-link:focus-visible {
+    top: 1rem;
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+}
+
+#cabecalho,
+#conteudo-principal,
+#rodape {
+    width: min(74rem, 94%);
+    margin: 0 auto;
+}
+
+#cabecalho {
+    padding: 1.25rem 0 1rem;
+}
+
+.atalhos,
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.atalhos {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary);
+}
+
+a:hover {
+    color: var(--secondary-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    color: var(--primary);
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu-icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 1rem;
+    fill: currentColor;
+}
+
+.intro {
+    margin: 0.5rem 0 1.4rem;
+}
+
+.intro h2 {
+    margin-bottom: 0.5rem;
+}
+
+.grid-comunicacao {
+    display: grid;
+    gap: 1.1rem;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 2rem;
+}
+
+.card {
+    grid-column: span 12;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+    padding: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+#formulario-privado,
+#suporte-github {
+    grid-column: span 6;
+}
+
+.mensagem-status {
+    min-height: 1.5rem;
+    margin: 0.7rem 0;
+    font-weight: 700;
+}
+
+.mensagem-status[data-status="erro"] {
+    color: var(--error);
+}
+
+.mensagem-status[data-status="sucesso"] {
+    color: var(--primary);
+}
+
+.ajuda {
+    color: var(--muted);
+}
+
+.campo-formulario {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.72rem;
+    border: 1px solid #557c66;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--text);
+    background-color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border: 2px solid var(--error);
+}
+
+.erro-campo {
+    min-height: 1.2rem;
+    margin: 0.25rem 0 0;
+    color: var(--error);
+    font-weight: 700;
+}
+
+button,
+.botao-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.72rem 1rem;
+    border-radius: 0.6rem;
+    border: 2px solid transparent;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button,
+.botao-link {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+button:hover,
+.botao-link:hover {
+    background: var(--primary-hover);
+    color: #ffffff;
+}
+
+.botao-link.secundario {
+    background: var(--secondary);
+}
+
+.botao-link.secundario:hover {
+    background: var(--secondary-hover);
+}
+
+.acoes-issues {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.oculto {
+    position: absolute;
+    left: -9999px;
+}
+
+#rodape {
+    border-top: 1px solid var(--border);
+    padding: 1.2rem 0 1.8rem;
+}
+
+.lista-redes-sociais {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.lista-redes-sociais li {
+    margin: 0 0 0.85rem;
+}
+
+.lista-redes-sociais li:last-child {
+    margin-bottom: 0;
+}
+
+#rodape a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.social-icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 1rem;
+    fill: currentColor;
+}
+
+@media (max-width: 900px) {
+    #formulario-privado,
+    #suporte-github {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 640px) {
+    .atalhos,
+    nav ul {
+        flex-direction: column;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}

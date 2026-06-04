@@ -1,0 +1,90 @@
+name: "Solicitar novo componente"
+description: "Sugira um novo componente acessivel para entrar no projeto."
+title: "[Componente] "
+labels:
+  - enhancement
+  - component-request
+  - triage
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado pela sugestao.
+        Quanto mais contexto voce trouxer, mais rapido conseguimos avaliar.
+
+  - type: input
+    id: nome-componente
+    attributes:
+      label: Nome do componente
+      placeholder: "Ex.: Modal acessivel"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema que o componente resolve
+      description: Qual dor real de produto ou usabilidade isso atende?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta de comportamento
+      description: Descreva interacao, estados e fluxo principal.
+      placeholder: |
+        - Estados: fechado, aberto, loading...
+        - Interacoes: mouse, teclado, touch...
+    validations:
+      required: true
+
+  - type: textarea
+    id: requisitos-a11y
+    attributes:
+      label: Requisitos de acessibilidade
+      description: Liste semantica, ARIA, foco, contraste e feedback esperados.
+      placeholder: |
+        - Navegacao total por teclado
+        - Nome acessivel nos controles
+        - Foco visivel em todos os elementos
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios-aceite
+    attributes:
+      label: Criterios de aceite
+      description: Defina quando consideraremos a entrega pronta.
+    validations:
+      required: true
+
+  - type: textarea
+    id: referencias
+    attributes:
+      label: Referencias
+      description: Links para design system, exemplos ou norma.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade sugerida
+      options:
+        - Alta
+        - Media
+        - Baixa
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: termos
+    attributes:
+      label: Confirmacoes
+      options:
+        - label: Verifiquei se nao existe solicitacao igual aberta.
+          required: true
+        - label: Estou ciente de que a implementacao depende de priorizacao.
+          required: true

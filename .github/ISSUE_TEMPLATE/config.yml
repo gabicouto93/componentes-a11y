@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Duvidas gerais
+    url: https://github.com/gabicouto93/componentes-a11y/discussions
+    about: Use Discussions para perguntas e conversas gerais.

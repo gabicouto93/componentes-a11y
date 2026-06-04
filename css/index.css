@@ -1,0 +1,104 @@
+
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7ff;
+}
+
+header {
+    background: #1d4ed8;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: block;
+    margin: 0 0 0.75rem;
+}
+
+nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.menu-icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 1rem;
+    fill: currentColor;
+}
+
+a {
+    color: #0b5cad;
+    text-decoration: underline;
+}
+
+header a,
+footer a {
+    color: #ffffff;
+}
+
+a:hover, a:focus-visible {
+    outline: 3px solid #146c2e;
+    outline-offset: 2px;
+    text-decoration: underline;
+}
+
+main {
+    padding: 2em;
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.lista-redes-sociais {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.lista-redes-sociais li {
+    margin: 0 0 0.75rem;
+}
+
+.lista-redes-sociais li:last-child {
+    margin-bottom: 0;
+}
+
+.lista-componentes-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+}
+
+.lista-componentes-links li {
+    margin: 0 0 0.65rem;
+}
+
+.lista-componentes-links li:last-child {
+    margin-bottom: 0;
+}
