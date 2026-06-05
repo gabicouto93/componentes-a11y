@@ -73,7 +73,28 @@
         }, 0);
     }
 
+    function redirecionarSecoesLegadasComponentes() {
+        var nomePagina = obterNomePaginaAtual();
+        var hashAtual = (window.location.hash || "").toLowerCase();
+        var caminhoAtual = window.location.pathname || "";
+        var destinoPorHash = {
+            "#links-botoes": "links-botoes.html",
+            "#tabelas": "tabelas.html",
+            "#formularios": "formularios.html"
+        };
+
+        if ((nomePagina !== "html.html" && nomePagina !== "texto, titulos, listas  e imagens.html") || !destinoPorHash[hashAtual]) {
+            return;
+        }
+
+        var ultimaBarra = caminhoAtual.lastIndexOf("/");
+        var caminhoBase = ultimaBarra >= 0 ? caminhoAtual.slice(0, ultimaBarra + 1) : "";
+        window.location.replace(caminhoBase + destinoPorHash[hashAtual]);
+    }
+
     window.addEventListener("load", function () {
+        redirecionarSecoesLegadasComponentes();
+
         if (obterNomePaginaAtual() === "obrigado.html") {
             focarTituloPrincipal();
         } else {
