@@ -3,38 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Telas internas de componentes HTML acessíveis.">
-    <title>Componentes HTML - Componentes A11Y</title>
+    <meta name="description" content="Texto, títulos, listas e imagens em HTML puro com exemplos acessíveis.">
+    <title>Texto, títulos, listas e imagens - Componentes A11Y - Gabriella Oliveira</title>
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/componentes-html.css">
     <script src="../../scripts/acessibilidade.js" defer></script>
+    <script src="../../scripts/componentes-html.js" defer></script>
 </head>
 <body>
-    <main id="conteudo-principal">
-        <h1>Componentes HTML</h1>
-        <p>Selecione um componente para revisar a estrutura semântica e os critérios de acessibilidade.</p>
-
-        <section id="texto-titulo-imagem" aria-labelledby="texto-titulo-imagem-heading">
-            <h2 id="texto-titulo-imagem-heading">Texto, título e imagem</h2>
+    <header aria-label="Cabeçalho" id="cabecalho">
+        <ul>
+            <li><a id="atalho-menu" href="#menu">Pular para o menu</a></li>
+            <li><a href="#conteudo-principal">Pular para o conteúdo principal</a></li>
+            <li><a href="#rodape">Pular para o rodapé</a></li>
+        </ul>
+        <h1 id="heading1">Componentes A11Y</h1>
+        <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li>Texto introdutório com hierarquia de heading.</li>
-                <li>Título principal e subtítulo com ordem semântica.</li>
-                <li>Imagem com texto alternativo descritivo.</li>
+                <li><a href="../../index.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5.5v-7h-5v7H4a1 1 0 0 1-1-1v-10.5z"></path></svg>Página inicial</a></li>
+                <li><a href="../sobre.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.42 0-8 2.69-8 6v1h16v-1c0-3.31-3.58-6-8-6z"></path></svg>Sobre</a></li>
+                <li><a aria-current="page" href="../componentes-a11y.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2a2.5 2.5 0 0 1 2.5 2.5V6h2A2.5 2.5 0 0 1 19 8.5v2h1.5A2.5 2.5 0 0 1 23 13v2a2.5 2.5 0 0 1-2.5 2.5H19V19a2.5 2.5 0 0 1-2.5 2.5h-2V23h-5v-1.5h-2A2.5 2.5 0 0 1 5 19v-1.5H3.5A2.5 2.5 0 0 1 1 15v-2a2.5 2.5 0 0 1 2.5-2.5H5v-2A2.5 2.5 0 0 1 7.5 6h2V4.5A2.5 2.5 0 0 1 12 2zm-4 7v6h8V9H8z"></path></svg>Componentes A11Y</a></li>
+                <li><a href="../contato.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.5L12 13l9-5.5V7l-9 5-9-5z"></path></svg>Contato</a></li>
             </ul>
-        </section>
+        </nav>
+    </header>
 
-        <section id="links-botoes" aria-labelledby="links-botoes-heading">
-            <h2 id="links-botoes-heading">Links e botões</h2>
-        </section>
+    <main id="conteudo-principal">
+        <h2>Texto, títulos, listas e imagens</h2>
+        <p class="intro">Biblioteca didática de componentes em HTML puro, com explicações práticas para uso no dia a dia.</p>
 
-        <section id="tabelas" aria-labelledby="tabelas-heading">
-            <h2 id="tabelas-heading">Tabelas</h2>
-        </section>
+        <h2 id="indice">Índice</h2>
+        <ul class="lista-componentes-links">
+            <li><a href="#texto">Texto</a></li>
+            <li><a href="#titulos">Títulos</a></li>
+            <li><a href="#listas">Listas</a></li>
+            <li><a href="#imagens">Imagens</a></li>
+        </ul>
 
-        <section id="formularios" aria-labelledby="formularios-heading">
-            <h2 id="formularios-heading">Formulários</h2>
-        </section>
+        <article id="texto" class="componente-card" aria-labelledby="texto-heading">
+            <h2 id="texto-heading">Texto</h2>
+            <p>Use a tag p para criar parágrafos de conteúdo textual.<br>Use br para quebrar uma linha dentro do mesmo parágrafo quando necessário.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview" aria-label="Exemplo de texto com parágrafo">
+                <p>Este é um exemplo de parágrafo criado com a tag p.<br>Esta linha foi quebrada com a tag br.</p>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de texto"><code id="codigo-texto">&lt;p&gt;Este é um exemplo de parágrafo criado com a tag p.&lt;br&gt;Esta linha foi quebrada com a tag br.&lt;/p&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-texto" aria-label="Copiar código texto">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-texto" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>p: define um parágrafo semântico de texto.</li>
+                <li>br: faz quebra de linha no conteúdo textual sem iniciar um novo parágrafo.</li>
+                <li>O conteúdo entre abertura e fechamento da tag é o texto exibido na tela.</li>
+            </ul>
+        </article>
+
+        <article id="titulos" class="componente-card" aria-labelledby="titulo-heading">
+            <h2 id="titulo-heading">Títulos</h2>
+            <p>Use h1 até h6 para organizar a hierarquia do conteúdo, do geral ao mais específico, h1 é o título principal.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview" aria-label="Exemplo de títulos de h1 a h6">
+                <h1 class="exemplo-titulo">Título nível h1<br>Subtítulo nível h1</h1>
+                <h2 class="exemplo-titulo">Título nível h2<br>Complemento nível h2</h2>
+                <h3 class="exemplo-titulo">Título nível h3</h3>
+                <h4 class="exemplo-titulo">Título nível h4</h4>
+                <h5 class="exemplo-titulo">Título nível h5</h5>
+                <h6 class="exemplo-titulo">Título nível h6</h6>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de títulos"><code id="codigo-titulo">&lt;h1&gt;Título nível h1&lt;br&gt;Subtítulo nível h1&lt;/h1&gt;
+&lt;h2&gt;Título nível h2&lt;br&gt;Complemento nível h2&lt;/h2&gt;
+&lt;h3&gt;Título nível h3&lt;/h3&gt;
+&lt;h4&gt;Título nível h4&lt;/h4&gt;
+&lt;h5&gt;Título nível h5&lt;/h5&gt;
+&lt;h6&gt;Título nível h6&lt;/h6&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-titulo" aria-label="Copiar código título">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-titulo" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>h1: representa o título principal da página.</li>
+                <li>h2 a h6: subtítulos em ordem hierárquica, sem pular níveis.</li>
+            </ul>
+        </article>
+
+        <article id="listas" class="componente-card" aria-labelledby="lista-heading">
+            <h2 id="lista-heading">Listas</h2>
+            <p>Existem três tipos principais de lista: não ordenada, ordenada e de definição.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview" aria-label="Exemplo de listas ul, ol e de definição">
+                <p><strong>Lista não ordenada (ul)</strong>: itens sem ordem numérica.</p>
+                <ul>
+                    <li>HTML semântico<br>Estrutura acessível</li>
+                    <li>Acessibilidade</li>
+                    <li>Testes manuais</li>
+                </ul>
+
+                <p><strong>Lista ordenada (ol)</strong>: itens em sequência numerada.</p>
+                <ol>
+                    <li>Planejar conteúdo</li>
+                    <li>Escrever código<br>Revisar semântica</li>
+                    <li>Validar acessibilidade</li>
+                </ol>
+
+                <p><strong>Lista de definição (dl)</strong>: termo e descrição.</p>
+                <dl>
+                    <dt>WCAG</dt>
+                    <dd>Conjunto de diretrizes internacionais de acessibilidade web.</dd>
+                    <dt>ARIA</dt>
+                    <dd>Atributos para complementar semântica em componentes interativos.<br>Devem ser usados com critério.</dd>
+                </dl>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de listas"><code id="codigo-lista">&lt;ul&gt;
+    &lt;li&gt;HTML semântico&lt;br&gt;Estrutura acessível&lt;/li&gt;
+  &lt;li&gt;Acessibilidade&lt;/li&gt;
+  &lt;li&gt;Testes manuais&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Planejar conteúdo&lt;/li&gt;
+    &lt;li&gt;Escrever código&lt;br&gt;Revisar semântica&lt;/li&gt;
+  &lt;li&gt;Validar acessibilidade&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;WCAG&lt;/dt&gt;
+  &lt;dd&gt;Conjunto de diretrizes internacionais de acessibilidade web.&lt;/dd&gt;
+  &lt;dt&gt;ARIA&lt;/dt&gt;
+    &lt;dd&gt;Atributos para complementar semântica em componentes interativos.&lt;br&gt;Devem ser usados com critério.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-lista" aria-label="Copiar código lista">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-lista" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>ul: lista sem ordem de prioridade entre itens.</li>
+                <li>ol: lista com sequência explícita de passos ou ranking.</li>
+                <li>li: cada item individual da lista ul ou ol.</li>
+                <li>dl: agrupa termos e definições.</li>
+                <li>dt: termo principal a ser definido.</li>
+                <li>dd: descrição do termo definido.</li>
+            </ul>
+        </article>
+
+        <article id="imagens" class="componente-card" aria-labelledby="imagem-heading">
+            <h2 id="imagem-heading">Imagens</h2>
+            <p>Use img com alt para descrever imagens informativas. Para imagem decorativa, use alt vazio.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview" aria-label="Exemplo de imagem com alt e imagem decorativa oculta">
+                <img class="exemplo-imagem" src="https://via.placeholder.com/320x180/1d4ed8/ffffff?text=Componente+A11Y" alt="Banner azul com o texto Componente A11Y">
+                <br>
+                <img class="exemplo-imagem" src="https://via.placeholder.com/160x90/93c5fd/0f172a?text=Decorativa" alt="">
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de imagens"><code id="codigo-imagem">&lt;img src="https://via.placeholder.com/320x180/1d4ed8/ffffff?text=Componente+A11Y"
+     alt="Banner azul com o texto Componente A11Y"&gt;
+
+    &lt;br&gt;
+
+&lt;img src="https://via.placeholder.com/160x90/93c5fd/0f172a?text=Decorativa"
+     alt=""&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-imagem" aria-label="Copiar código imagem">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-imagem" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>img: insere uma imagem na página.</li>
+                <li>alt: descreve imagens informativas para tecnologias assistivas.</li>
+                <li>br: força uma quebra de linha quando você precisa separar blocos visuais no conteúdo.</li>
+            </ul>
+        </article>
 
         <p><a href="../componentes-a11y.html">Voltar para Componentes A11Y</a></p>
     </main>
+
+    <footer id="rodape" aria-label="rodapé">
+        <h2 id="redes-sociais">Redes sociais</h2>
+        <ul class="lista-redes-sociais">
+            <li id="linkedin"><a href="https://www.linkedin.com/in/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Linkedin - abre em uma nova aba">Linkedin</a></li>
+            <li id="github"><a href="https://github.com/gabicouto93/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Repositório no GitHub - abre em uma nova aba">Repositório no GitHub</a></li>
+        </ul>
+        <p>Copyright 2026; Componentes A11Y - todos os direitos reservados</p>
+    </footer>
 </body>
 </html>

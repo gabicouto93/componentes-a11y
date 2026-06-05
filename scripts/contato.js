@@ -100,7 +100,7 @@ async function enviarFormulario(event) {
         botaoEnviar.disabled = true;
     }
 
-    atualizarStatus("Enviando mensagem privada...", "sucesso");
+    atualizarStatus("enviando mensagem.", "sucesso");
 
     try {
         const resposta = await fetch(contatoForm.action, {
