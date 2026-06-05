@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulários em HTML puro com exemplos acessíveis.">
+    <title>Formulários - Componentes A11Y - Gabriella Oliveira</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/componentes-html.css">
+    <script src="../../scripts/acessibilidade.js" defer></script>
+    <script src="../../scripts/componentes-html.js" defer></script>
+</head>
+<body>
+    <header aria-label="Cabeçalho" id="cabecalho">
+        <ul>
+            <li><a id="atalho-menu" href="#menu">Pular para o menu</a></li>
+            <li><a href="#conteudo-principal">Pular para o conteúdo principal</a></li>
+            <li><a href="#rodape">Pular para o rodapé</a></li>
+        </ul>
+        <h1 id="heading1">Componentes A11Y</h1>
+        <nav id="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="../../index.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5.5v-7h-5v7H4a1 1 0 0 1-1-1v-10.5z"></path></svg>Página inicial</a></li>
+                <li><a href="../sobre.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.42 0-8 2.69-8 6v1h16v-1c0-3.31-3.58-6-8-6z"></path></svg>Sobre</a></li>
+                <li><a href="../componentes-a11y.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2a2.5 2.5 0 0 1 2.5 2.5V6h2A2.5 2.5 0 0 1 19 8.5v2h1.5A2.5 2.5 0 0 1 23 13v2a2.5 2.5 0 0 1-2.5 2.5H19V19a2.5 2.5 0 0 1-2.5 2.5h-2V23h-5v-1.5h-2A2.5 2.5 0 0 1 5 19v-1.5H3.5A2.5 2.5 0 0 1 1 15v-2a2.5 2.5 0 0 1 2.5-2.5H5v-2A2.5 2.5 0 0 1 7.5 6h2V4.5A2.5 2.5 0 0 1 12 2zm-4 7v6h8V9H8z"></path></svg>Componentes A11Y</a></li>
+                <li><a href="../contato.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.5L12 13l9-5.5V7l-9 5-9-5z"></path></svg>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="conteudo-principal">
+        <h2 id="componentes-heading">Formulários</h2>
+        <p class="intro">Biblioteca didática de formulários em HTML puro, com foco em estrutura semântica e preenchimento acessível.</p>
+
+        <h2 id="indice">Índice</h2>
+        <ul class="lista-componentes-links">
+            <li><a href="#formulario-completo">Formulário completo</a></li>
+        </ul>
+
+        <article id="formulario-completo" class="componente-card" aria-labelledby="formulario-completo-heading">
+            <h2 id="formulario-completo-heading">Formulário completo</h2>
+            <p>Este exemplo reúne campos comuns de formulário em um único bloco: texto, número, e-mail, password, telefone, select, radio button, checkbox e botão enviar.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview" aria-label="Exemplo de formulário com campos diversos">
+                <form action="#" method="post">
+                    <p>
+                        <label for="nome">Nome completo</label><br>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required>
+                    </p>
+
+                    <p>
+                        <label for="idade">Idade</label><br>
+                        <input type="number" id="idade" name="idade" min="0" max="120" required>
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail</label><br>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="senha">Senha</label><br>
+                        <input type="password" id="senha" name="senha" autocomplete="new-password" required>
+                    </p>
+
+                    <p>
+                        <label for="telefone">Telefone</label><br>
+                        <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(11) 99999-9999">
+                    </p>
+
+                    <p>
+                        <label for="assunto">Assunto</label><br>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="suporte">Suporte</option>
+                            <option value="orcamento">Orçamento</option>
+                        </select>
+                    </p>
+
+                    <fieldset>
+                        <legend>Canal preferido</legend>
+                        <input type="radio" id="canal-email" name="canal" value="email" required>
+                        <label for="canal-email">E-mail</label><br>
+                        <input type="radio" id="canal-telefone" name="canal" value="telefone">
+                        <label for="canal-telefone">Telefone</label>
+                    </fieldset>
+
+                    <p>
+                        <input type="checkbox" id="aceite" name="aceite" value="sim" required>
+                        <label for="aceite">Li e aceito os termos de uso</label>
+                    </p>
+
+                    <p>
+                        <button type="submit">Enviar</button>
+                    </p>
+                </form>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de formulário completo"><code id="codigo-formulario-completo">&lt;form action="#" method="post"&gt;
+  &lt;p&gt;
+    &lt;label for="nome"&gt;Nome completo&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="nome" name="nome" autocomplete="name" required&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for="idade"&gt;Idade&lt;/label&gt;&lt;br&gt;
+    &lt;input type="number" id="idade" name="idade" min="0" max="120" required&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for="email"&gt;E-mail&lt;/label&gt;&lt;br&gt;
+    &lt;input type="email" id="email" name="email" autocomplete="email" required&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for="senha"&gt;Senha&lt;/label&gt;&lt;br&gt;
+    &lt;input type="password" id="senha" name="senha" autocomplete="new-password" required&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for="telefone"&gt;Telefone&lt;/label&gt;&lt;br&gt;
+    &lt;input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(11) 99999-9999"&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for="assunto"&gt;Assunto&lt;/label&gt;&lt;br&gt;
+    &lt;select id="assunto" name="assunto" required&gt;
+      &lt;option value=""&gt;Selecione&lt;/option&gt;
+      &lt;option value="duvida"&gt;Dúvida&lt;/option&gt;
+      &lt;option value="suporte"&gt;Suporte&lt;/option&gt;
+      &lt;option value="orcamento"&gt;Orçamento&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Canal preferido&lt;/legend&gt;
+    &lt;input type="radio" id="canal-email" name="canal" value="email" required&gt;
+    &lt;label for="canal-email"&gt;E-mail&lt;/label&gt;&lt;br&gt;
+    &lt;input type="radio" id="canal-telefone" name="canal" value="telefone"&gt;
+    &lt;label for="canal-telefone"&gt;Telefone&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;p&gt;
+    &lt;input type="checkbox" id="aceite" name="aceite" value="sim" required&gt;
+    &lt;label for="aceite"&gt;Li e aceito os termos de uso&lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+  &lt;/p&gt;
+&lt;/form&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-formulario-completo" aria-label="Copiar código formulário completo">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-formulario-completo" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <h4>Função de cada componente</h4>
+            <ul>
+                <li>Nome completo (input text): captura identificação principal da pessoa usuária.</li>
+                <li>Idade (input number): coleta valor numérico com limite mínimo e máximo.</li>
+                <li>E-mail (input email): recebe contato eletrônico e valida formato básico automaticamente.</li>
+                <li>Senha (input password): recebe credencial ocultando caracteres na interface.</li>
+                <li>Telefone (input tel): registra telefone em formato flexível, útil para contato.</li>
+                <li>Assunto (select): permite escolher apenas uma opção entre valores pré-definidos.</li>
+                <li>Canal preferido (radio): força escolha única entre e-mail e telefone.</li>
+                <li>Aceite de termos (checkbox): registra consentimento explícito antes do envio.</li>
+                <li>Enviar (button submit): dispara a submissão do formulário.</li>
+            </ul>
+
+            <h4>Tags utilizadas</h4>
+            <ul>
+                <li>form: contêiner semântico de todos os campos e ponto de submissão dos dados.</li>
+                <li>p: bloco de agrupamento visual simples para campo e rótulo.</li>
+                <li>label: rótulo textual associado a um controle pelo atributo for.</li>
+                <li>input: campo genérico cujo comportamento muda conforme o atributo type.</li>
+                <li>select: lista de seleção única.</li>
+                <li>option: item individual de escolha dentro do select.</li>
+                <li>fieldset: agrupamento semântico de controles relacionados.</li>
+                <li>legend: título do grupo descrito pelo fieldset.</li>
+                <li>button: controle acionável; com type submit envia o formulário.</li>
+                <li>br: quebra de linha para separar rótulo e campo na leitura visual.</li>
+            </ul>
+
+            <h4>Atributos utilizados</h4>
+            <ul>
+                <li>action="#": define o destino do envio; no exemplo, usa âncora local para fins didáticos.</li>
+                <li>method="post": envia dados no corpo da requisição, indicado para formulários com informações sensíveis.</li>
+                <li>type: define o tipo de controle (text, number, email, password, tel, radio, checkbox, submit).</li>
+                <li>id: identificador único do campo na página.</li>
+                <li>name: nome da chave enviada no formulário.</li>
+                <li>for (no label): conecta o rótulo ao id do campo correspondente.</li>
+                <li>required: torna o preenchimento obrigatório antes de enviar.</li>
+                <li>autocomplete: sugere preenchimento automático adequado (name, email, new-password, tel).</li>
+                <li>min e max: definem intervalo permitido para input number.</li>
+                <li>placeholder: fornece exemplo de formato esperado no campo telefone.</li>
+                <li>value: define valor enviado para radio, checkbox e opções do select.</li>
+            </ul>
+
+            <h4>Formulário como um todo</h4>
+            <ul>
+                <li>Estrutura semântica: cada campo possui rótulo visível, facilitando entendimento e navegação por tecnologia assistiva.</li>
+                <li>Validação nativa: required, type, min e max reduzem erros de preenchimento sem depender de JavaScript.</li>
+                <li>Agrupamento lógico: fieldset e legend deixam claro que os radios pertencem ao mesmo contexto.</li>
+                <li>Experiência de uso: autocomplete e tipos adequados ajudam no preenchimento em desktop e mobile.</li>
+                <li>Envio consistente: button submit finaliza o processo e dispara a submissão do conjunto de dados.</li>
+            </ul>
+        </article>
+
+        <p><a href="../componentes-a11y.html">Voltar para Componentes A11Y</a></p>
+    </main>
+
+    <footer id="rodape" aria-label="rodapé">
+        <h2 id="redes-sociais">Redes sociais</h2>
+        <ul class="lista-redes-sociais">
+            <li id="linkedin"><a href="https://www.linkedin.com/in/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Linkedin - abre em uma nova aba">Linkedin</a></li>
+            <li id="github"><a href="https://github.com/gabicouto93/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Repositório no GitHub - abre em uma nova aba">Repositório no GitHub</a></li>
+        </ul>
+        <p>Copyright 2026; Componentes A11Y - todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

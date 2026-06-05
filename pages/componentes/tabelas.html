@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tabelas simples e complexas em HTML puro com exemplos acessíveis.">
+    <title>Tabelas - Componentes A11Y - Gabriella Oliveira</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/componentes-html.css">
+    <link rel="stylesheet" href="../../css/tabelas.css">
+    <script src="../../scripts/acessibilidade.js" defer></script>
+    <script src="../../scripts/componentes-html.js" defer></script>
+    <script src="../../scripts/tabelas.js" defer></script>
+</head>
+<body>
+    <header aria-label="Cabeçalho" id="cabecalho">
+        <ul>
+            <li><a id="atalho-menu" href="#menu">Pular para o menu</a></li>
+            <li><a href="#conteudo-principal">Pular para o conteúdo principal</a></li>
+            <li><a href="#rodape">Pular para o rodapé</a></li>
+        </ul>
+        <h1 id="heading1">Componentes A11Y</h1>
+        <nav id="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="../../index.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5.5v-7h-5v7H4a1 1 0 0 1-1-1v-10.5z"></path></svg>Página inicial</a></li>
+                <li><a href="../sobre.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.42 0-8 2.69-8 6v1h16v-1c0-3.31-3.58-6-8-6z"></path></svg>Sobre</a></li>
+                <li><a href="../componentes-a11y.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2a2.5 2.5 0 0 1 2.5 2.5V6h2A2.5 2.5 0 0 1 19 8.5v2h1.5A2.5 2.5 0 0 1 23 13v2a2.5 2.5 0 0 1-2.5 2.5H19V19a2.5 2.5 0 0 1-2.5 2.5h-2V23h-5v-1.5h-2A2.5 2.5 0 0 1 5 19v-1.5H3.5A2.5 2.5 0 0 1 1 15v-2a2.5 2.5 0 0 1 2.5-2.5H5v-2A2.5 2.5 0 0 1 7.5 6h2V4.5A2.5 2.5 0 0 1 12 2zm-4 7v6h8V9H8z"></path></svg>Componentes A11Y</a></li>
+                <li><a href="../contato.html"><svg class="menu-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.5L12 13l9-5.5V7l-9 5-9-5z"></path></svg>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="conteudo-principal">
+        <h2 id="componentes-heading">Tabelas</h2>
+        <p class="intro">Biblioteca didática de tabelas em HTML puro, com exemplos simples e complexos para uso acessível.</p>
+
+        <h2 id="indice">Índice</h2>
+        <ul class="lista-componentes-links">
+            <li><a href="#tabela-simples">Tabela simples</a></li>
+            <li><a href="#tabela-mesclada">Tabela mesclada</a></li>
+            <li><a href="#tabela-checkbox">Tabela com checkbox</a></li>
+            <li><a href="#tabela-radio">Tabela com radio button</a></li>
+            <li><a href="#tabela-link-botao">Tabela com link e botão</a></li>
+            <li><a href="#tabela-ordenacao">Tabela com ordenação</a></li>
+        </ul>
+
+        <article id="tabela-simples" class="componente-card" aria-labelledby="tabela-simples-heading">
+            <h2 id="tabela-simples-heading">Tabela simples</h2>
+            <p>Use table para organizar dados em linhas e colunas com cabeçalhos associados.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table>
+                    <caption>Cadastro de pessoas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Cidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Ana</th>
+                            <td>Teste</td>
+                            <td>São Paulo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Bruno</th>
+                            <td>Produto</td>
+                            <td>Curitiba</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela simples"><code id="codigo-tabela-simples">&lt;table&gt;
+  &lt;caption&gt;Cadastro de pessoas&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Nome&lt;/th&gt;
+      &lt;th scope="col"&gt;Cargo&lt;/th&gt;
+      &lt;th scope="col"&gt;Cidade&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;Ana&lt;/th&gt;
+      &lt;td&gt;Teste&lt;/td&gt;
+      &lt;td&gt;São Paulo&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-simples" aria-label="Copiar código tabela simples">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-tabela-simples" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>Tag th: cria a célula de cabeçalho da tabela.</li>
+                <li>Atributo scope: define a associação do cabeçalho, com scope="col" para coluna e scope="row" para linha.</li>
+                <li>Tag thead: agrupa a área de cabeçalhos da tabela.</li>
+                <li>Tag tr: cria cada linha da tabela.</li>
+                <li>Tag tbody: agrupa as linhas de dados da tabela.</li>
+                <li>Tag td: cria células de dados comuns.</li>
+                <li>Tag caption: apresenta o título da tabela.</li>
+            </ul>
+        </article>
+
+        <article id="tabela-mesclada" class="componente-card" aria-labelledby="tabela-mesclada-heading">
+            <h2 id="tabela-mesclada-heading">Tabela mesclada</h2>
+            <p>Use colspan e rowspan para mesclar colunas e linhas quando a informação ocupar mais de uma célula.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table>
+                    <caption>Agenda semanal</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Horário</th>
+                            <th scope="col">Segunda</th>
+                            <th scope="col">Terça</th>
+                            <th scope="col">Quarta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">08h</th>
+                            <td rowspan="2">Reunião</td>
+                            <td>Planejamento</td>
+                            <td>Leitura</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">09h</th>
+                            <td colspan="2">Treinamento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela mesclada"><code id="codigo-tabela-mesclada">&lt;table&gt;
+  &lt;caption&gt;Agenda semanal&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Horário&lt;/th&gt;
+      &lt;th scope="col"&gt;Segunda&lt;/th&gt;
+      &lt;th scope="col"&gt;Terça&lt;/th&gt;
+      &lt;th scope="col"&gt;Quarta&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;08h&lt;/th&gt;
+      &lt;td rowspan="2"&gt;Reunião&lt;/td&gt;
+      &lt;td&gt;Planejamento&lt;/td&gt;
+      &lt;td&gt;Leitura&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;09h&lt;/th&gt;
+      &lt;td colspan="2"&gt;Treinamento&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-mesclada" aria-label="Copiar código tabela mesclada">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-tabela-mesclada" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>rowspan="2": faz a célula ocupar duas linhas, da linha atual até a próxima.</li>
+                <li>colspan="2": faz a célula ocupar duas colunas, da coluna atual até a próxima.</li>
+                <li>Essa técnica deve ser usada com cuidado para não comprometer a leitura da tabela.</li>
+            </ul>
+        </article>
+
+        <article id="tabela-checkbox" class="componente-card" aria-labelledby="tabela-checkbox-heading">
+            <h2 id="tabela-checkbox-heading">Tabela com checkbox</h2>
+            <p>Use checkbox dentro de tabelas quando for necessário selecionar mais de um item ao mesmo tempo.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table>
+                    <caption>Tarefas do dia</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Selecionar tarefa</th>
+                            <th scope="col">Tarefa</th>
+                            <th scope="col">Responsável</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><input type="checkbox" id="chk-1" aria-label="Selecionar tarefa Revisar acessibilidade"><label for="chk-1"></label></th>
+                            <td>Revisar acessibilidade</td>
+                            <td>Gabriella</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" id="chk-2" aria-label="Selecionar tarefa Validar contraste"><label for="chk-2"></label></th>
+                            <td>Validar contraste</td>
+                            <td>Ana</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela com checkbox"><code id="codigo-tabela-checkbox">&lt;table&gt;
+  &lt;caption&gt;Tarefas do dia&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+            &lt;th scope="col"&gt;Selecionar tarefa&lt;/th&gt;
+      &lt;th scope="col"&gt;Tarefa&lt;/th&gt;
+      &lt;th scope="col"&gt;Responsável&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+            &lt;th scope="row"&gt;&lt;input type="checkbox" id="chk-1" aria-label="Tarefa Revisar acessibilidade"&gt;&lt;label for="chk-1"&gt;&lt;/label&gt;&lt;/th&gt;
+      &lt;td&gt;Revisar acessibilidade&lt;/td&gt;
+      &lt;td&gt;Gabriella&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;&lt;input type="checkbox" id="chk-2" aria-label="Tarefa Validar contraste"&gt;&lt;label for="chk-2"&gt;&lt;/label&gt;&lt;/th&gt;
+            &lt;td&gt;Validar contraste&lt;/td&gt;
+            &lt;td&gt;Ana&lt;/td&gt;
+        &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-checkbox" aria-label="Copiar código tabela checkbox">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-tabela-checkbox" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>checkbox: permite selecionar vários itens ao mesmo tempo.</li>
+                <li>label: amplia a área clicável e associa o texto ao controle.</li>
+                <li>th scope="row": ajuda a associar a seleção à linha correspondente.</li>
+            </ul>
+        </article>
+
+        <article id="tabela-radio" class="componente-card" aria-labelledby="tabela-radio-heading">
+            <h2 id="tabela-radio-heading">Tabela com radio button</h2>
+            <p>Use radio button quando apenas uma opção pode ser escolhida em um grupo.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table>
+                    <caption>Forma de contato preferida</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Escolher canal</th>
+                            <th scope="col">Canal</th>
+                            <th scope="col">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><input type="radio" name="contato" id="radio-1" aria-label="Canal E-mail"><label for="radio-1"></label></th>
+                            <td>E-mail</td>
+                            <td>Resposta por mensagem eletrônica</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="radio" name="contato" id="radio-2" aria-label="Canal Telefone"><label for="radio-2"></label></th>
+                            <td>Telefone</td>
+                            <td>Contato por ligação</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela com radio button"><code id="codigo-tabela-radio">&lt;table&gt;
+  &lt;caption&gt;Forma de contato preferida&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+            &lt;th scope="col"&gt;Escolher canal&lt;/th&gt;
+      &lt;th scope="col"&gt;Canal&lt;/th&gt;
+      &lt;th scope="col"&gt;Descrição&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+            &lt;th scope="row"&gt;&lt;input type="radio" name="contato" id="radio-1" aria-label="Canal E-mail"&gt;&lt;label for="radio-1"&gt;&lt;/label&gt;&lt;/th&gt;
+      &lt;td&gt;E-mail&lt;/td&gt;
+      &lt;td&gt;Resposta por mensagem eletrônica&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;&lt;input type="radio" name="contato" id="radio-2" aria-label="Canal Telefone"&gt;&lt;label for="radio-2"&gt;&lt;/label&gt;&lt;/th&gt;
+            &lt;td&gt;Telefone&lt;/td&gt;
+            &lt;td&gt;Contato por ligação&lt;/td&gt;
+        &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-radio" aria-label="Copiar código tabela radio">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-tabela-radio" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>radio: permite escolher apenas uma opção dentro do mesmo grupo.</li>
+                <li>name igual nos radios: garante que apenas uma opção seja selecionada.</li>
+                <li>label: facilita a seleção e melhora a usabilidade.</li>
+            </ul>
+        </article>
+
+        <article id="tabela-link-botao" class="componente-card" aria-labelledby="tabela-link-botao-heading">
+            <h2 id="tabela-link-botao-heading">Tabela com link e botão</h2>
+            <p>Use links para navegar e botões para executar ações diretamente em cada linha.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table>
+                    <caption>Atendimentos</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Protocolo</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">12345</th>
+                            <td>Aberto</td>
+                            <td>
+                                <a href="../contato.html" aria-label="Ver detalhes do protocolo 12345">Ver detalhes</a>
+                                <button type="button" aria-label="Fechar atendimento do protocolo 12345">Fechar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela com link e botão"><code id="codigo-tabela-link-botao">&lt;table&gt;
+  &lt;caption&gt;Atendimentos&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Protocolo&lt;/th&gt;
+      &lt;th scope="col"&gt;Status&lt;/th&gt;
+      &lt;th scope="col"&gt;Ação&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;12345&lt;/th&gt;
+      &lt;td&gt;Aberto&lt;/td&gt;
+      &lt;td&gt;
+        &lt;a href="../contato.html" aria-label="Ver detalhes do protocolo 12345"&gt;Ver detalhes&lt;/a&gt;
+                &lt;button type="button" aria-label="Fechar atendimento do protocolo 12345"&gt;Fechar&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-link-botao" aria-label="Copiar código tabela link e botão">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+            <p id="feedback-tabela-link-botao" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>a: navega para outra página ou recurso.</li>
+                <li>button: executa uma ação sem mudar de página.</li>
+                <li>Os dois elementos podem coexistir na mesma célula quando a interface exige navegação e ação.</li>
+            </ul>
+        </article>
+
+        <article id="tabela-ordenacao" class="componente-card" aria-labelledby="tabela-ordenacao-heading">
+            <h2 id="tabela-ordenacao-heading">Tabela com ordenação</h2>
+            <p>Os cabeçalhos são botões que alternam entre ordem crescente, decrescente e padrão, mantendo o foco no próprio botão e informando o resultado da ordenação.</p>
+
+            <h3>Exemplo</h3>
+            <div class="preview preview-tabela">
+                <table id="tabela-ordenavel">
+                    <caption>Ranking de prioridade</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><button type="button" class="botao-ordenar" data-key="nome" aria-label="Ordenar por Nome, ordem padrão">Nome</button></th>
+                            <th scope="col"><button type="button" class="botao-ordenar" data-key="prioridade" aria-label="Ordenar por Prioridade, ordem padrão">Prioridade</button></th>
+                            <th scope="col"><button type="button" class="botao-ordenar" data-key="cidade" aria-label="Ordenar por Cidade, ordem padrão">Cidade</button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-nome="Bruno" data-prioridade="2" data-cidade="Curitiba">
+                            <th scope="row">Bruno</th>
+                            <td>2</td>
+                            <td>Curitiba</td>
+                        </tr>
+                        <tr data-nome="Ana" data-prioridade="1" data-cidade="São Paulo">
+                            <th scope="row">Ana</th>
+                            <td>1</td>
+                            <td>São Paulo</td>
+                        </tr>
+                        <tr data-nome="Carla" data-prioridade="3" data-cidade="Recife">
+                            <th scope="row">Carla</th>
+                            <td>3</td>
+                            <td>Recife</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p id="feedback-ordenacao" class="feedback-copia" role="status" aria-live="polite" aria-atomic="true"></p>
+            </div>
+
+            <h3>Código gerado</h3>
+            <pre tabindex="0" aria-label="Código de exemplo de tabela com ordenação"><code id="codigo-tabela-ordenacao">&lt;table id="tabela-ordenavel"&gt;
+  &lt;caption&gt;Ranking de prioridade&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+    &lt;th scope="col"&gt;&lt;button type="button" class="botao-ordenar" data-key="nome" aria-label="Ordenar por Nome, ordem padrão"&gt;Nome&lt;/button&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;button type="button" class="botao-ordenar" data-key="prioridade" aria-label="Ordenar por Prioridade, ordem padrão"&gt;Prioridade&lt;/button&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;button type="button" class="botao-ordenar" data-key="cidade" aria-label="Ordenar por Cidade, ordem padrão"&gt;Cidade&lt;/button&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr data-nome="Bruno" data-prioridade="2" data-cidade="Curitiba"&gt;
+      &lt;th scope="row"&gt;Bruno&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Curitiba&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            <button type="button" class="botao-copiar" data-copy-target="codigo-tabela-ordenacao" aria-label="Copiar código tabela ordenação">
+                <svg class="icone-copiar" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 8h11v13H8z"></path><path d="M5 3h11v3H8v10H5z"></path></svg>
+                Copiar código
+            </button>
+
+            <h3>Explicação</h3>
+            <ul>
+                <li>th com botão: permite ordenar a coluna sem perder a semântica de cabeçalho.</li>
+                <li>aria-label: informa a ação e o estado atual do botão, como ordem padrão, crescente ou decrescente.</li>
+                <li>O foco permanece no botão porque a tabela é reordenada sem recriar o elemento clicado.</li>
+                <li>O feedback confirma que a ordenação foi concluída.</li>
+            </ul>
+        </article>
+
+        <p><a href="../componentes-a11y.html">Voltar para Componentes A11Y</a></p>
+    </main>
+
+    <footer id="rodape" aria-label="rodapé">
+        <h2 id="redes-sociais">Redes sociais</h2>
+        <ul class="lista-redes-sociais">
+            <li id="linkedin"><a href="https://www.linkedin.com/in/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Linkedin - abre em uma nova aba">Linkedin</a></li>
+            <li id="github"><a href="https://github.com/gabicouto93/gabicouto93" target="_blank" rel="noopener noreferrer" aria-label="Repositório no GitHub - abre em uma nova aba">Repositório no GitHub</a></li>
+        </ul>
+        <p>Copyright 2026; Componentes A11Y - todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

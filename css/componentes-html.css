@@ -1,0 +1,126 @@
+:root {
+    --a11y-azul: #1d4ed8;
+    --a11y-azul-escuro: #0f172a;
+    --a11y-azul-claro: #dbeafe;
+    --a11y-fundo: #f5f7ff;
+    --a11y-borda: #93c5fd;
+    --a11y-texto: #1f2937;
+    --a11y-sucesso: #0f7a2a;
+}
+
+#conteudo-principal {
+    width: min(72rem, 94%);
+}
+
+.intro {
+    margin-bottom: 1.25rem;
+}
+
+.componente-card {
+    background: #ffffff;
+    border: 1px solid var(--a11y-borda);
+    border-left: 6px solid var(--a11y-azul);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.15rem;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.componente-card h2 {
+    margin-top: 0;
+    color: var(--a11y-azul-escuro);
+}
+
+.preview {
+    border: 1px dashed var(--a11y-borda);
+    border-radius: 0.6rem;
+    background: var(--a11y-fundo);
+    padding: 0.9rem;
+    margin-bottom: 0.85rem;
+}
+
+.exemplo-titulo {
+    margin: 0 0 0.5rem;
+    color: var(--a11y-texto);
+}
+
+.exemplo-imagem {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 0 0 0.75rem;
+}
+
+.grupo-botoes-exemplo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0 0 0.75rem;
+}
+
+.grupo-botoes-exemplo:last-child {
+    margin-bottom: 0;
+}
+
+.grupo-botoes-exemplo button,
+.grupo-botoes-exemplo input {
+    min-height: 44px;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #1d4ed8;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+pre {
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.9rem;
+    overflow-x: auto;
+    border-radius: 0.6rem;
+    border: 1px solid #334155;
+    background: #0b1220;
+    color: #e2e8f0;
+}
+
+.botao-copiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 44px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--a11y-azul);
+    border-radius: 0.5rem;
+    background: var(--a11y-azul);
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-copiar:hover {
+    background: #1e40af;
+}
+
+.icone-copiar {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+.feedback-copia {
+    min-height: 1.2rem;
+    margin: 0.5rem 0 0;
+    font-weight: 700;
+    color: var(--a11y-sucesso);
+}
+
+.componente-futuro {
+    border-left-color: #64748b;
+}
+
+@media (max-width: 640px) {
+    .componente-card {
+        padding: 0.85rem;
+    }
+}
